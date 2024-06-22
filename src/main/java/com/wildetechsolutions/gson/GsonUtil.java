@@ -21,7 +21,7 @@ public class GsonUtil {
 
     public static void patch(Object object, Map<String, Object> jsonMap) throws NoSuchFieldException{
         JsonObject jsonObject = new Gson().toJsonTree(jsonMap).getAsJsonObject();
-        setJsonValues(jsonObject, object, jsonObject.getClass(), null);
+        setJsonValues(jsonObject, object, object.getClass(), null);
     }
 
     private static Object convertObjectToTargetType(String key, JsonObject jsonObject, Class<?> fieldType) {
